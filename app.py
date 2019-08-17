@@ -14,9 +14,7 @@ app.config['PROPAGATE_EXCEPTIONS'] = True # To allow flask propagating exception
 app.secret_key = 'lily'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 jwt = JWT(app, authenticate, identity)
 
